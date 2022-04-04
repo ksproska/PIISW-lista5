@@ -5,15 +5,16 @@ import { BookListResolver } from "./books/resolvers/book-list.resolver";
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/books'
+  },
+  {
     path: 'books',
     component: BookListComponent,
     resolve: {
       books: BookListResolver
     }
-  },
-  {
-    path: '**',
-    redirectTo: '/books'
   }
 ];
 
