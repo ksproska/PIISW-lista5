@@ -10,6 +10,10 @@ const routes: Routes = [
     resolve: {
       books: BookListResolver
     }
+  },
+  {
+    path: '**',
+    redirectTo: '/books'
   }
 ];
 
