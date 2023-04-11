@@ -12,7 +12,7 @@ export class BookEditComponent {
   readonly book: Book;
 
   constructor(private readonly activatedRoute: ActivatedRoute, private readonly booksService: BooksService) {
-    this.book = this.activatedRoute.snapshot.data['books'];
+    this.book = this.activatedRoute.snapshot.data['book'];
   }
 
   submitted = false;
