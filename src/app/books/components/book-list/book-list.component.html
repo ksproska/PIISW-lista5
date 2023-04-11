@@ -8,6 +8,7 @@
         <p class="card-text">
           {{ book.description }}
         </p>
+        <a [routerLink]="[book.id]" class="card-link">Details</a>
         <a [routerLink]="[book.id, 'edit']" class="card-link">Edit</a>
         <a [routerLink]="[book.id, 'reviews']" class="card-link">Reviews</a>
       </div>
