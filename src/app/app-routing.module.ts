@@ -6,6 +6,7 @@ import { BookListResolver } from "./books/resolvers/book-list.resolver";
 import {BookResolver} from "./books/resolvers/book.resolver";
 import {BookEditComponent} from "./books/components/book-edit/book-edit.component";
 import {ReviewResolver} from "./books/resolvers/review.resolver";
+import {ReviewCreateComponent} from "./books/components/review-create/review-create.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,13 @@ const routes: Routes = [
   {
     path: 'books/:id/edit',
     component: BookEditComponent,
+    resolve: {
+      book: BookResolver
+    }
+  },
+  {
+    path: 'books/:id/reviews/new',
+    component: ReviewCreateComponent,
     resolve: {
       book: BookResolver
     }

@@ -15,9 +15,7 @@ export class BookEditComponent {
     this.book = this.activatedRoute.snapshot.data['book'];
   }
 
-  submitted = false;
   onSubmit() {
-    this.submitted = true;
     this.booksService.saveBook(this.book).subscribe();
   }
 }

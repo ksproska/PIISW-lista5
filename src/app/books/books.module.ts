@@ -6,12 +6,14 @@ import {RouterModule} from "@angular/router";
 import { BookComponent } from './components/book/book.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import {FormsModule} from "@angular/forms";
+import { ReviewCreateComponent } from './components/review-create/review-create.component';
 
 @NgModule({
   declarations: [
     BookListComponent,
     BookComponent,
-    BookEditComponent
+    BookEditComponent,
+    ReviewCreateComponent
   ],
   imports: [
     CommonModule,

@@ -27,4 +27,12 @@ export class BooksService {
   getAllReviewsForBook(id: any) {
     return this.http.get<Review[]>(reviewsApiPrefix + "?forBook=" + id);
   }
+
+  saveReview(review: Review): Observable<Review> {
+    return this.http.post<Review>(reviewsApiPrefix, review);
+  }
+
+  getAllReviews(): Observable<Review[]> {
+    return this.http.get<Review[]>(reviewsApiPrefix)
+  }
 }
