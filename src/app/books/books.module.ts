@@ -7,13 +7,15 @@ import { BookComponent } from './components/book/book.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import {FormsModule} from "@angular/forms";
 import { ReviewCreateComponent } from './components/review-create/review-create.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
 
 @NgModule({
   declarations: [
     BookListComponent,
     BookComponent,
     BookEditComponent,
-    ReviewCreateComponent
+    ReviewCreateComponent,
+    ReviewListComponent
   ],
   imports: [
     CommonModule,
