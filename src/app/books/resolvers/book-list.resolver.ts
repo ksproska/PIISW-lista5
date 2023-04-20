@@ -17,6 +17,6 @@ export class BookListResolver implements Resolve<Book[]> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Book[]> {
-    return this.booksService.getAllBooks();
+    return this.booksService.getAllBooks(route.queryParams["search"]);//route.paramMap.get("query")
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../model/book';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BooksService} from "../../services/books.service";
 
 @Component({
   selector: 'bs-book-list',
@@ -9,9 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookListComponent {
 
-  readonly books: Book[];
+  books: Book[];
+  search : any;
 
-  constructor(private readonly activatedRoute: ActivatedRoute) {
+  constructor(private readonly activatedRoute: ActivatedRoute, private readonly router: Router, private readonly bookService: BooksService) {
     this.books = this.activatedRoute.snapshot.data['books'];
+    this.search = this.activatedRoute.snapshot.queryParams["search"];
+  }
+
+
+  valueChange() {
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: { search: this.search },
+        queryParamsHandling: 'merge'
+    });
+    this.bookService.getAllBooks(this.search).subscribe(
+      b => this.books = b
+    );
   }
 }
