@@ -2,6 +2,9 @@
 
 # Lista zadań nr 5: Angular
 
+## Implementacja
+![implementation](angular_presentation.gif)
+
 ## Zadania
 
 1. (3 pkt) W aplikacji `Bookstore` zaimplementowano widok listy książek (dostępny pod linkiem `/books`). \
@@ -15,7 +18,8 @@
   (d) Link `Reviews` elementu listy książek powinien przekierowywać do widoku szczegółowego. \
   (e) W widocznym miejscu na widoku szczegółowym umieść link pozwalający na powrót do widoku listy.
 
-2. (6 pkt) Zaimplementuj widok edycji dla książki. \
+2. (6 pkt) Zaimplementuj widok edycji dla książki.
+
    Widok edycji powinien składać się formularza oraz pól edycyjnych pozwalających na zmianę każdego pola obiektu `Book` za wyjątkiem identyfikatora (`id`). \
    Opis książki zrealizuj przy pomocy edytora `<textarea>`, pozostałe pola przy pomocy edytorów typu `<input>`. \
    Wykorzystaj mechanizm reaktywnych formularzy ( _reactive forms_ ).
@@ -42,7 +46,7 @@
 3. (4 pkt) Rozszerz widok szczegółowy o listę recenzji. Wyświetl wszystkie recenzje, jedna pod drugą. Każda recenzja powinna zawierać autora, tytuł, treść oraz ocenę.
 
   (a) Wyświetlanie recenzji powinno być zrealizowane przy użyciu osobnego komponentu (jeden komponent na recenzję, użyj `*ngFor` do wyświetlenia listy). \
-  (b) Zaimplementuj osobny serwis do wczytywania recenzji (należy w tym celu stworzyć osobny resolver).
+  (b) Zaimplementuj osobny serwis do wczytywania recenzji (należy w tym celu stworzyć osobny resolver). \
   Zauważ, że `json-server` pozwala na odpytanie o recenzje dla danej książki z wykorzystaniem http://localhost:3000/api/reviews?forBook=1. \
   (c) Zintegruj wczytywanie recenzji z widokiem widoku szczegółowego.
 
@@ -54,13 +58,13 @@
   (c) Rozszerz serwis dla recenzji o funkcjonalność zapisu recenzji. \
   (d) Po zatwierdzeniu recenzji (przy użyciu np. przycisku `Save`) recenzja powinna być zapisana w backendzie, a widok szczegółowy odpowiednio zaktualizowany.
 
-5. A(4 pkt) Wyszukiwanie pełnotekstowe książek.
+5. (4 pkt) Wyszukiwanie pełnotekstowe książek.
   
   Na widoku listy książek umieść pole edycyjne pozwalające na wpisywanie tekstu. \
   Po wpisaniu co najmniej dwóch znaków lista książek powinna zostać zawężona do tych, które zawierają w swoich polach podany tekst.
   
-  (a) Zauważ, że json-server pozwala na wykonania wyszukania pełnotekstowego dzięki następującemu zapytaniu: http://localhost:3000/api/books?q=query. \
-  (b) Wyszukiwanie powinno zostać wykonane niezwłocznie po zakończeniu pisania przez użytkownika (brak konieczności naciśnięcia przycisku lub klawisza ENTER). \
+  (a) Zauważ, że `json-server` pozwala na wykonania wyszukania pełnotekstowego dzięki następującemu zapytaniu: http://localhost:3000/api/books?q=query. \
+  (b) Wyszukiwanie powinno zostać wykonane niezwłocznie po zakończeniu pisania przez użytkownika (brak konieczności naciśnięcia przycisku lub klawisza `ENTER`). \
   (c) Lista książek powinna zostać zaktualizowana (odpowiednio zawężona) bez przeładowywania strony. \
   (d) Zapewnij, że zapytania do serwera nie są wysyłane częściej niż raz na `200ms`.
 
@@ -112,7 +116,7 @@ Zatrzymanie pracy backendu możliwe jest po wciśnięciu CTRL-C.
 Tryb developerski pozwala na szybki restart frondendu w celu natychmiastowej weryfikacji napisanego kodu. 
 Uruchomienie frontendu następuje po wykonaniu następującej komendy:
 
-```
+```bash
 ng serve -o
 ```
 
